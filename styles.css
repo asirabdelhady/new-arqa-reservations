@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.canvas-container {
+    position: relative;
+    width: 65%; /* Increase width for the canvas */
+    flex: 1;
+  overflow: auto;
+}
+
+.form-container {
+    width: 30%;
+    margin-left: auto; /* Push the form container to the right */
+    text-align: right; /* Align text and inputs to the right */
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: aliceblue;
+}
+.scroll-end {
+    height: 100px;
+  }
+#reservationCanvas {
+    width: 100%;
+    height: auto;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th { /* Dark blue background for headers */
+    text-align: center;
+    font-size: 16px;
+    padding-left: 3 px;
+    padding-right: 3px;
+}
+
+td {
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    gap: 5px; /* Adjust as needed for spacing between fields */
+    align-items: right;
+    justify-content: right;
+}
+
+/* Style the scrollbar */
+.form-container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Style the track (background of the scrollbar) */
+.form-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light grey background */
+}
+
+/* Style the scrollbar thumb (the scroll handle) */
+.form-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Darker grey for the thumb */
+    border-radius: 6px; /* Rounded edges */
+    border: 3px solid #f1f1f1; /* Adds padding around the thumb */
+}
+
+/* Change the thumb color on hover */
+.form-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker on hover */
+}
