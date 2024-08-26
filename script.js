@@ -22,16 +22,17 @@ const otherPosition = { x: 982, y: 450 };
 // const clinicDetailsPosition = {x: 1040, y: 1435 }
 // const otherDetailsPosition = {x: 1330, y: 890 }
 // const projectPosition = {x: 2390, y: 1630 }
-const unitCodePosition = {x: 951, y: 791 }
-const unitSpacePosition = {x: 777, y: 791 }
-const unitFloorPosition = {x: 615, y: 791 }
-const unitTowerPosition = {x: 444, y: 791 }
-const reservationPricePosition = {x: 280, y: 791 }
+const unitCodePosition = {x: 970, y: 791 }
+const unitSpacePosition = {x: 785, y: 791 }
+const unitFloorPosition = {x: 625, y: 791 }
+const unitTowerPosition = {x: 470, y: 791 }
+const reservationPricePosition = {x: 300, y: 791 }
 const totalUnitPricePosition = {x: 934, y: 833 }
 const numberInWordsPosition = {x: 810, y: 1730 }
 const serviceDepositPosition = {x: 936, y: 1186 }
 const serviceDatePosition = {x: 225, y: 1200 }
 const commentsPosition = {x: 936, y: 1234 }
+const conditionDayPosition = {x: 1015, y: 1460 }
 const applicantPosition = {x: 1168, y: 1625 }
 const salesDependantPosition = {x: 885, y: 1625 }
 const salesSupervisorPosition = {x: 585, y: 1625 }
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('serviceDeposit').addEventListener('input', updateCanvas);
     document.getElementById('serviceDate').addEventListener('input', updateCanvas);
     document.getElementById('comments').addEventListener('input', updateCanvas);
+    document.getElementById('conditionDay').addEventListener('input', updateCanvas);
     document.getElementById('applicant').addEventListener('input', updateCanvas);
     document.getElementById('salesDependant').addEventListener('input', updateCanvas);
     document.getElementById('salesSupervisor').addEventListener('input', updateCanvas);
@@ -199,6 +201,7 @@ function drawCanvas() {
     const serviceDeposit = document.getElementById('serviceDeposit').value;
     const serviceDate = document.getElementById('serviceDate').value;
     const comments = document.getElementById('comments').value;
+    const conditionDay = document.getElementById('conditionDay').value;
     const applicant = document.getElementById('applicant').value;
     const salesDependant = document.getElementById('salesDependant').value;
     const salesSupervisor = document.getElementById('salesSupervisor').value;
@@ -328,6 +331,10 @@ function drawCanvas() {
     const scaledCommentsPosition = {
         x: calculatePosition(commentsPosition.x, canvas.width, img.width),
         y: calculatePosition(commentsPosition.y, canvas.height, img.height) + offset
+    }
+    const scaledConditionDayPosition = {
+        x: calculatePosition(conditionDayPosition.x, canvas.width, img.width),
+        y: calculatePosition(conditionDayPosition.y, canvas.height, img.height) + offset
     }
     const scaledApplicantPosition = {
         x: calculatePosition(applicantPosition.x, canvas.width, img.width),
@@ -461,6 +468,7 @@ function drawCanvas() {
     ctx.fillText(serviceDeposit, scaledServiceDepositPosition.x, scaledServiceDepositPosition.y);
     ctx.fillText(serviceDate, scaledServiceDatePosition.x, scaledServiceDatePosition.y);
     ctx.fillText(comments, scaledCommentsPosition.x, scaledCommentsPosition.y);
+    ctx.fillText(conditionDay, scaledConditionDayPosition.x, scaledConditionDayPosition.y);
     ctx.fillText(applicant, scaledApplicantPosition.x, scaledApplicantPosition.y);
     ctx.fillText(salesDependant, scaledSalesDependantPosition.x, scaledSalesDependantPosition.y);
     ctx.fillText(salesSupervisor, scaledSalesSupervisorPosition.x, scaledSalesSupervisorPosition.y);
@@ -685,6 +693,7 @@ function printCanvas() {
     const serviceDeposit = document.getElementById('serviceDeposit').value;
     const serviceDate = document.getElementById('serviceDate').value;
     const comments = document.getElementById('comments').value;
+    const conditionDay = document.getElementById('conditionDay').value;
     const applicant = document.getElementById('applicant').value;
     const salesDependant = document.getElementById('salesDependant').value;
     const salesSupervisor = document.getElementById('salesSupervisor').value;
@@ -842,6 +851,10 @@ function printCanvas() {
     const scaledCommentsPosition = {
         x: commentsPosition.x * canvasToMMFactorX,
         y: commentsPosition.y * canvasToMMFactorY + 2
+    }
+    const scaledConditionDayPosition = {
+        x: conditionDayPosition.x * canvasToMMFactorX,
+        y: conditionDayPosition.y * canvasToMMFactorY + 2
     }
     const scaledApplicantPosition = {
         x: applicantPosition.x * canvasToMMFactorX,
@@ -1063,24 +1076,25 @@ function printCanvas() {
                     font-size: ${tickFontSizeMM}mm; /* Size of the tick mark */
                     font-family: Arial, sans-serif;
                 }
+                #dateText { top: 24.401544mm; right: 175.117647mm; }
                 #nameText { top: ${scaledNamePosition.y}mm; right: ${canvasWidthMM - scaledNamePosition.x}mm; }
                 #name2Text { top: ${scaledName2Position.y}mm; right: ${canvasWidthMM - scaledName2Position.x}mm; }
                 #phoneText { top: ${scaledPhonePosition.y}mm; right: ${canvasWidthMM - scaledPhonePosition.x}mm; }
-                #phone2Text { top: ${scaledPhone2Position.y}mm; right: ${canvasWidthMM - scaledPhone2Position.x}mm; }
-                #dateText { top: ${scaledDatePosition.y}mm; right: ${canvasWidthMM - scaledDatePosition.x}mm; }
+                #phone2Text { top: 43.592388mm; right: 141.6470588235294mm; }
                 #occupationText { top: ${scaledOccupationPosition.y}mm; right: ${canvasWidthMM - scaledOccupationPosition.x}mm; }
-                #emailText { top: ${scaledEmailPosition.y}mm; right: ${canvasWidthMM - scaledEmailPosition.x}mm; }
-                #otherHowText { top: ${scaledOtherHowPosition.y}mm; right: ${canvasWidthMM - scaledOtherHowPosition.x}mm; }
+                #emailText { top: 50.964148mm; right: 147.6mm; }
+                #otherHowText { top: 66.690568mm; right: ${canvasWidthMM - scaledOtherHowPosition.x}mm; }
                 #companyNameText { top: ${scaledCompanyNamePosition.y}mm; right: ${canvasWidthMM - scaledCompanyNamePosition.x}mm; }
-                #brokerNameText { top: ${scaledBrokerNamePosition.y}mm; right: ${canvasWidthMM - scaledBrokerNamePosition.x}mm; }
-                #unitCodeText { top: ${scaledUnitCodePosition.y}mm; right: ${canvasWidthMM - scaledUnitCodePosition.x}mm; }
-                #unitSpaceText { top: ${scaledUnitSpacePosition.y}mm; right: ${canvasWidthMM - scaledUnitSpacePosition.x}mm; }
-                #unitFloorText { top: ${scaledUnitFloorPosition.y}mm; right: ${canvasWidthMM - scaledUnitFloorPosition.x}mm; }
-                #unitTowerText { top: ${scaledUnitTowerPosition.y}mm; right: ${canvasWidthMM - scaledUnitTowerPosition.x}mm; }
-                #reservationPriceText { top: ${scaledReservationPricePosition.y}mm; right: ${canvasWidthMM - scaledReservationPricePosition.x}mm; }
+                #brokerNameText { top: 87.822945mm; right: 37.2235294117647mm; }
+                #unitCodeText { top: 130.579151mm; right: 52.235294mm; }
+                #unitSpaceText { top: 130.579151mm; right: 86.705882mm; }
+                #unitFloorText { top: 130.579151mm; right: 115.058824mm; }
+                #unitTowerText { top: 130.579151mm; right: 142.235294mm; }
+                #reservationPriceText { top: 130.579151mm; right: 170.588235mm; }
                 #serviceDepositText { top: ${scaledServiceDepositPosition.y}mm; right: ${canvasWidthMM - scaledServiceDepositPosition.x}mm; }
                 #serviceDateText { top: ${scaledServiceDatePosition.y}mm; right: ${canvasWidthMM - scaledServiceDatePosition.x}mm; }
                 #commentsText { top: ${scaledCommentsPosition.y}mm; right: ${canvasWidthMM - scaledCommentsPosition.x}mm; }
+                #conditionDayText { top: 242.676779mm; right: 42.835294mm; }
                 #applicantText { top: ${scaledApplicantPosition.y}mm; right: ${canvasWidthMM - scaledApplicantPosition.x}mm; }
                 #salesDependantText { top: ${scaledSalesDependantPosition.y}mm; right: ${canvasWidthMM - scaledSalesDependantPosition.x}mm; }
                 #salesSupervisorText { top: ${scaledSalesSupervisorPosition.y}mm; right: ${canvasWidthMM - scaledSalesSupervisorPosition.x}mm; }
@@ -1088,9 +1102,9 @@ function printCanvas() {
                 #salesConsultant1Text { top: ${scaledSalesConsultant1Position.y}mm; right: ${canvasWidthMM - scaledSalesConsultant1Position.x}mm; }
                 #salesConsultant2Text { top: ${scaledSalesConsultant2Position.y}mm; right: ${canvasWidthMM - scaledSalesConsultant2Position.x}mm; }
                 #totalUnitPriceText { top: ${scaledTotalUnitPricePosition.y}mm; right: ${canvasWidthMM - scaledTotalUnitPricePosition.x}mm; }
-                #contractProviderText { top: ${scaledContractProviderPosition.y}mm; right: ${canvasWidthMM - scaledContractProviderPosition.x}mm; }
+                #contractProviderText { top:174.79260893546606mm; right: 18.917647mm; }
                 #installmentPlanText { top: ${scaledInstallmentPlanPosition.y}mm; right: ${canvasWidthMM - scaledInstallmentPlanPosition.x}mm; }
-                #numOfInstallmentsText { top: ${scaledNumOfInstallmentsPosition.y}mm; right: ${canvasWidthMM - scaledNumOfInstallmentsPosition.x}mm; }
+                #numOfInstallmentsText { top: 176.007722mm; right: 137.505882mm; }
                 #installmentsDate1Text { top: ${scaledInstallmentsDate1Position.y}mm; right: ${canvasWidthMM - scaledInstallmentsDate1Position.x}mm; }
                 #installmentsDate2Text { top: ${scaledInstallmentsDate2Position.y}mm; right: ${canvasWidthMM - scaledInstallmentsDate2Position.x}mm; }
 
@@ -1100,19 +1114,19 @@ function printCanvas() {
                 
 
 
-                #tujariTick { top: ${scaledTujariPosition.y}mm; left: ${scaledTujariPosition.x}mm; }
-                #connectionsTick { top: ${scaledConnectionPosition.y}mm; left: ${scaledConnectionPosition.x}mm; }
-                #idariTick { top: ${scaledIdariPosition.y}mm; left: ${scaledIdariPosition.x}mm; }
-                #tibiTick { top: ${scaledTibiPosition.y}mm; left: ${scaledTibiPosition.x}mm; }
-                #insideEgyptTick { top: ${scaledInsideEgyptPosition.y}mm; left: ${scaledInsideEgyptPosition.x}mm; }
-                #outsideEgyptTick { top: ${scaledOutsideEgyptPosition.y}mm; left: ${scaledOutsideEgyptPosition.x}mm; }
-                #websiteTick { top: ${scaledWebsitePosition.y}mm; left: ${scaledWebsitePosition.x}mm; }
-                #socialMediaTick { top: ${scaledsocialMediaPosition.y}mm; left: ${scaledsocialMediaPosition.x}mm; }
-                #previousClientTick { top: ${scaledpreviousClientPosition.y}mm; left: ${scaledpreviousClientPosition.x}mm; }
-                #brokerTick { top: ${scaledBrokerPosition.y}mm; left: ${scaledBrokerPosition.x}mm; }
-                #otherTick { top: ${scaledOtherPosition.y}mm; left: ${scaledOtherPosition.x}mm; }
-                #typeCashTick { top: ${scaledTypeCash.y}mm; left: ${scaledTypeCash.x}mm; }
-                #typeChequeTick { top: ${scaledTypeCheque.y}mm; left: ${scaledTypeCheque.x}mm; }
+                #tujariTick { top: 106.98235mm; left: 146.6705882352941mm; }
+                #connectionsTick { top: 57.526751mm; left: 153.905882mm; }
+                #idariTick { top:106.98235mm; left: 90.176471mm; }
+                #tibiTick { top: 106.98235mm; left: 29.235294mm; }
+                #insideEgyptTick { top: 85.047987mm; left: 57.72941176470589mm; }
+                #outsideEgyptTick { top: 85.047987mm; left: 27.258824mm; }
+                #websiteTick { top: 57.526751mm; left: 27.588235mm; }
+                #socialMediaTick { top: 57.526751mm; left: 64.317647mm; }
+                #previousClientTick { top: 57.526751mm; left: 127.4mm; }
+                #brokerTick { top: 56.690568mm; left: 90.34117647058824mm; }
+                #otherTick { top: 64.717595mm; left: 154.741176mm; }
+                #typeCashTick { top: 145.332598mm; left: 55.094118mm; }
+                #typeChequeTick { top: 145.332598mm; left: 55.09411764705882mm; }
 
 
             </style>
@@ -1137,6 +1151,7 @@ function printCanvas() {
                 <div id="serviceDepositText" class="text">${serviceDeposit}</div>
                 <div id="serviceDateText" class="text">${serviceDate}</div>
                 <div id="commentsText" class="text">${comments}</div>
+                <div id="conditionDayText" class="text">${conditionDay}</div>
                 <div id="applicantText" class="text">${applicant}</div>
                 <div id="salesDependantText" class="text">${salesDependant}</div>
                 <div id="salesSupervisorText" class="text">${salesSupervisor}</div>

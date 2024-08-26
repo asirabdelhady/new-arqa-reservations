@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="canvas-container">
-        <canvas id="reservationCanvas" width="800" height="1000"></canvas>
+        <canvas id="reservationCanvas"></canvas>
     </div>
 
     <div class="form-container">
@@ -24,7 +24,7 @@
                 <input type="text" id="name" name="name" maxlength="39" oninput="updateCanvas()">
             </div>
             <div class="input-field">
-                <label for="name">الاسم</label>
+                <label for="name2">الاسم</label>
                 <input type="text" id="name2" name="name2" maxlength="39" oninput="updateCanvas()">
             </div>
             <div class="input-field">
@@ -32,7 +32,7 @@
                 <input type="text" id="phone" name="phone" maxlength="13" oninput="updateCanvas()">
             </div>
             <div class="input-field">
-                <label for="phone">الهاتف</label>
+                <label for="phone2">الهاتف</label>
                 <input type="text" id="phone2" name="phone2" maxlength="14" oninput="updateCanvas()">
             </div>
             <div class="input-field">
@@ -43,19 +43,39 @@
                 <label for="email">الايميل</label>
                 <input type="text" id="email" name="email" maxlength="39" oninput="updateCanvas()">
             </div>
+            <Fieldset>   
+                <legend>كيف تعرفت علينا </legend>
             <div class="input-field">
-                <label style="font-weight: 800;">كبف تعرفت علينا</label><br>
+                <div class="form-how">
+                    <label>
                 <input type="radio" id="website" name="howDidYouFindUS" value="facebook" onchange="updateCanvas()"> Website 
+                    </label>
+                <br>
+                    <label>
                 <input type="radio" id="socialMedia" name="howDidYouFindUS" value="instagram" onchange="updateCanvas()"> Social Media
-                <input type="radio" id="broker" name="howDidYouFindUS" value="broker" onchange="updateCanvas()"> Broker 
-                <input type="radio" id="previousClient" name="howDidYouFindUS" value="previousClient" onchange="updateCanvas()"> عميل سابق <br>
+                    </label>
+                <br>
+                    <label>
+                <input type="radio" id="broker" name="howDidYouFindUS" value="broker" onchange="updateCanvas()"> Broker
+                    </label>
+                <br> 
+                    <label>
+                <input type="radio" id="previousClient" name="howDidYouFindUS" value="previousClient" onchange="updateCanvas()"> عميل سابق 
+                    </label>
+                <br>
+                    <label>
                 <input type="radio" id="connections" name="howDidYouFindUS" value="connections" onchange="updateCanvas()"> معارف
+                    </label>
+                <br>
+                    <label>
                 <input type="radio" id="other" name="howDidYouFindUS" value="other" onchange="updateCanvas()"> Other
+                    </label>
+                <br>
+                </div>
             </div>
-            
-            
+         </Fieldset> <br>
             <div class="input-field"  id="otherHowField" style="display: none;">
-                <label for="otherHow">وسيلة التعاف</label>
+                <label for="otherHow">برجاء تحديد وسيلة التعارف</label>
                 <input type="text" id="otherHow" name="otherHow" maxlength="64" oninput="updateCanvas()">
             </div>
             <div class="input-field" id="brokerNameField" style="display: none;">
@@ -65,23 +85,46 @@
                 <input type="text" id="companyName" name="companyName" maxlength="49" oninput="updateCanvas()">
             </div>
             
-            <label style="font-weight: 800;">نوع التعاقد</label><br>
-
-            <div class="input-field form-row">
-                خارج مصر <input type="radio" id="outsideEgypt" name="contract" value="outsideEgypt" onchange="updateCanvas()">
-                داخل مصر <input type="radio" id="insideEgypt" name="contract" value="insideEgypt" onchange="updateCanvas()"> <br>
-
+            <Fieldset>   
+                <legend>نوع التعاقد</legend>     
+            <div class="input-field">
+                <div class="form-egypt">
+                <label>
+                <input type="radio" id="outsideEgypt" name="contract" value="outsideEgypt" onchange="updateCanvas()"> خارج مصر 
+                </label>
+                <br>
+                <label>
+                  <input type="radio" id="insideEgypt" name="contract" value="insideEgypt" onchange="updateCanvas()"> داخل مصر
+                </label>
+                <br>
+                </div>
             </div>
+        </Fieldset> <br>
             <label for="salesConsultant">اسم استشاري المبيعات</label>
             <div class="input-field form-row" >
+                <label for="salesConsultant">
                 <input type="text" id="salesConsultant2" name="salesConsultant2" maxlength="49" oninput="updateCanvas()">
                 <input type="text" id="salesConsultant1" name="salesConsultant1" maxlength="49" oninput="updateCanvas()">
+                </label>
             </div>
-            <div class="input-field form-row">
-                <input type="radio" id="tibi" name="category" value="طبي" onchange="updateCanvas()"> طبي    <br>
-                <input type="radio" id="idari" name="category" value="اداري" onchange="updateCanvas()"> اداري   <br>
-                <input type="radio" id="tujari" name="category" value="نجاري" onchange="updateCanvas()"> تجاري  <br>
-            </div>   
+            <div class="input-field">
+                <fieldset>
+                    <legend>نوع التعاقد</legend>
+                    <div class="form-category">
+                        <label>
+                            <input type="radio" id="tibi" name="category" value="طبي" onchange="updateCanvas()"> طبي
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="idari" name="category" value="إداري" onchange="updateCanvas()"> إداري
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="tujari" name="category" value="تجاري" onchange="updateCanvas()"> تجاري
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
             <!-- <div class="input-field" id="brokerNameField">
                 <label for="companyCode">كود الشركة</label>
                 <input type="text" id="companyCode" name="companyCode" maxlength="29" oninput="updateCanvas()">
@@ -120,50 +163,58 @@
                 </thead>
                 <tbody>
                     <tr style="background-color: #eaf2fb; text-align: center;">
-                        <td><input type="text" placeholder="" id="reservationPrice" maxlength="20"></td>
-                        <td><input type="text" placeholder="" id="unitTower" maxlength="10"></td>
-                        <td><input type="text" placeholder="" id="unitFloor" maxlength="10"></td>
-                        <td><input type="text" placeholder="" id="unitSpace" maxlength="10"></td>
-                        <td><input type="text" placeholder="" id="unitCode" maxlength="10"></td>
+                        <td><input type="number" placeholder="" id="reservationPrice" maxlength="30"></td>
+                        <td><input type="text" placeholder="" id="unitTower" maxlength="20"></td>
+                        <td><input type="text" placeholder="" id="unitFloor" maxlength="20"></td>
+                        <td><input type="text" placeholder="" id="unitSpace" maxlength="20"></td>
+                        <td><input type="text" placeholder="" id="unitCode" maxlength="20"></td>
                         <!-- <td><input type="text" placeholder="" id="project" maxlength="10"></td> -->
                     </tr>
                 </tbody>
             </table>
             <div class="input-field">
-                <label for="totalUnitPrice">اجمالي ثمن الوحده</label><br>
-                <input type="number" id="totalUnitPrice" name="totalUnitPrice" maxlength="49" oninput="updateCanvas()">
+                <label for="totalUnitPrice">إجمالي ثمن الوحدة</label><br>
+                <input type="text" id="totalUnitPrice" name="totalUnitPrice" maxlength="49" oninput="updateCanvas()">
             </div>
             <!-- <div class="input-field">
                 <label for="numberInWords">فقط</label><br>
                 <input type="text" id="numberInWords" name="numberInWords" maxlength="49" oninput="updateCanvas()">
             </div> -->
-            <label style="font-weight: 800;">طريقة السداد</label><br>
-            <div class="input-field form-row">
-                <input type="radio" id="typeCheque" name="paymentType" value="typeCheque" onchange="updateCanvas()"> حسب النظام التالي  <br>
-                <input type="radio" id="typeCash" name="paymentType" value="typeCash" onchange="updateCanvas()"> كاش   <br>  
-            </div>
-            <table border="1" style="width:100%; border-collapse: collapse;">
+            <fieldset>
+                <legend>طريقة السداد</legend>
+                <div class="input-field form-row">
+                    <label>
+                <input type="radio" id="typeCheque" name="paymentType" value="typeCheque" onchange="updateCanvas()"> حسب النظام التالي  
+                    </label>
+                    <br>
+                    <label>
+                <input type="radio" id="typeCash" name="paymentType" value="typeCash" onchange="updateCanvas()"> كاش   
+                    </label> 
+                    <br>
+                </div>
+            </fieldset>
+                    <br>
+            <table border="1" >
                 <tr style="background-color: #005bac; color: white; text-align: center;">
                   <th style="padding: 10px;">عدد الأقساط</th>
                   <th style="padding: 10px;">نظام السداد</th>
                   <th style="padding: 10px;">مقدم التعاقد</th>
                 </tr>
                 <tr style="background-color: #eaf2fb; text-align: center;">
-                  <td rowspan="2" style=""><input type="text" style="width: 100%; height: 300%; border: none; background-color: #eaf2fb; text-align: center;" id="numOfInstallments"/></td> <!-- Merged cell with input -->
-                  <td style=""><input type="text" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" id="installmentPlan"/></td>
-                  <td style=""><input type="text" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" id="contractProvider"/></td>
+                  <td rowspan="2"><input type="text" style="width: 100%; height: 300%; border: none; background-color: #eaf2fb; text-align: center;" id="numOfInstallments"/></td> <!-- Merged cell with input -->
+                  <td ><input type="text" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" id="installmentPlan"/></td>
+                  <td ><input type="text" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" id="contractProvider"/></td>
                 </tr>
                 <tr style="background-color: #eaf2fb; text-align: center;">
-                    <td style=""><input type="date" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" placeholder="/ / بتاريخ:" id="installmentsDate2" /></td>
-                  <td style=""><input type="date" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" placeholder="/ / بتاريخ:" id="installmentsDate1"/></td>
+                    <td> <input type="date" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" placeholder="/ / بتاريخ:" id="installmentsDate2" /></td>
+                  <td> <input type="date" style="width: 100%; height: 100%; border: none; background-color: #eaf2fb; text-align: center;" placeholder="/ / بتاريخ:" id="installmentsDate1"/></td>
                 </tr>
               </table>
               
             <br>
 
-            
             <div class="input-field">
-                <label for="serviceDeposit">وديعة الصيانه</label><br>
+                <label for="serviceDeposit">وديعة الصيانة</label><br>
                 <input type="text" id="serviceDeposit" name="serviceDeposit" maxlength="49" oninput="updateCanvas()">
             </div>
             <div class="input-field">
@@ -174,25 +225,31 @@
                 <label for="comments">ملاحاظات</label><br>
                 <input type="text" id="comments" name="comments" maxlength="49" oninput="updateCanvas()">
             </div>
+            <div class="input-field">
+                <label for="conditionDay">تاريخ التعاقد خلال</label><br>
+                <input type="number" id="conditionDay" name="conditionDay" maxlength="49" oninput="updateCanvas()">
+            </div>
            <div class="form-row">
             <div class="input-field">
-                <label for="headOfSales">رئيس قطاع المبيعات</label><br>
-                <input type="text" id="headOfSales" name="headOfSales maxlength="49" oninput="updateCanvas()">
+                <label for="applicant">  مقدم الطلب  </label><br>
+                <input type="text" id="applicant" name="applicant" maxlength="49" oninput="updateCanvas()">
             </div>
             <div class="input-field">
-                <label for="salesSupervisor">مدير<br> المبيعات</label><br>
-                <input type="text" id="salesSupervisor" name="salesSupervisor" maxlength="49" oninput="updateCanvas()">
-            </div>
-            <div class="input-field">
-                <label for="salesDependant">مسئول المبيعات</label><br>
+                
+                <label for="salesDependant"> إدارة المبيعات </label><br>
                 <input type="text" id="salesDependant" name="salesDependant" maxlength="49" oninput="updateCanvas()">
             </div>
             <div class="input-field">
-                <label for="applicant">مقدم طلب الحجز</label><br>
-                <input type="text" id="applicant" name="applicant" maxlength="49" oninput="updateCanvas()">
+                <label for="salesSupervisor"> إدارة القطاع التجاري </label><br>
+                <input type="text" id="salesSupervisor" name="salesSupervisor" maxlength="49" oninput="updateCanvas()">
+            </div>
+            <div class="input-field">
+            
+                <label for="headOfSales"> إلادارة المالية </label><br>
+                <input type="text" id="headOfSales" name="headOfSales maxlength="49" oninput="updateCanvas()">
             </div>
            </div>
-            <button style="color: white; background-color: #123B60;" type="button" onclick="printCanvas()">طباعة</button>
+            <button class="slide_from_bottom" type="button" onclick="printCanvas()">طباعة</button>
         </form>
     </div>
 
